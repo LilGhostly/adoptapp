@@ -11,6 +11,18 @@
       <p>Miles de animales están buscando un nuevo hogar...</p>
     </div>
     <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+      <!-- Campo Nombre -->
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="name" 
+          name="name" 
+          required
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Correo Electrónico -->
       <ion-item class="email-item">
         <ion-label position="floating">Correo Electrónico</ion-label>
         <ion-input 
@@ -29,6 +41,7 @@
         </div>
       </ion-item>
 
+      <!-- Campo Contraseña -->
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input 
@@ -44,6 +57,7 @@
         </div>
       </ion-item>
 
+      <!-- Campo Confirmar Contraseña -->
       <ion-item>
         <ion-label position="floating">Confirmar Contraseña</ion-label>
         <ion-input 
@@ -62,6 +76,28 @@
         </div>
       </ion-item>
 
+      <!-- Campo Teléfono (Con formato chileno) -->
+      <ion-item>
+        <ion-label position="stacked">Teléfono (opcional)</ion-label>
+        <div class="phone-container">
+          <span class="phone-prefix">+569</span>
+          <ion-input 
+            type="tel" 
+            [(ngModel)]="phone" 
+            name="phone"
+            #phoneInput="ngModel"
+            placeholder="Número de teléfono"
+            maxlength="8" 
+          ></ion-input>
+        </div>
+        <div *ngIf="phone && !phone.match('^\\d{8}$')" class="error-message">
+          El número de teléfono debe contener 8 dígitos.
+        </div>
+        <!-- Texto informativo debajo del campo de teléfono -->
+        <p class="phone-info-text">El teléfono solo se usará para facilitar el contacto a otros usuarios cuando crees anuncios de animales.</p>
+      </ion-item>
+
+      <!-- Botón de registro -->
       <ion-button 
         expand="full" 
         type="submit" 

@@ -14,14 +14,24 @@ export class LoginPage {
   constructor(private authService: AuthService, private navCtrl: NavController) {}
 
   onLogin() {
-    if (this.authService.login(this.email, this.password)) {
-      this.navCtrl.navigateForward('/home');
-    } else {
-      alert('Credenciales incorrectas');
-    }
+    // Llamamos al servicio de login
+    this.authService.login(this.email, this.password).subscribe(
+      (res) => {
+        console.log('Login exitoso:', res);
+        this.navCtrl.navigateForward('/home'); // Navegar a la página principal
+      },
+      (error) => {
+        console.error('Error de login:', error);
+        alert('Credenciales incorrectas'); // Mostrar un mensaje de error
+      }
+    );
   }
 
   navToRegister() {
     this.navCtrl.navigateForward('/register');
+  }
+
+  onForgotPassword() {
+    // Implementación para recuperar contraseña
   }
 }

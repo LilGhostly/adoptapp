@@ -1,35 +1,32 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth'; // Importar AngularFireAuth
+import { from, Observable } from 'rxjs'; // Convertir promesas en observables
+import { map } from 'rxjs/operators'; // Para manipular los resultados
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private users = new Map<string, string>(); // Simula una base de datos de usuarios
-  private isAuthenticatedStatus = false;
 
-  constructor() {}
+  constructor(private afAuth: AngularFireAuth) {}
 
-  register(email: string, password: string): boolean {
-    if (this.users.has(email)) {
-      return false; // Usuario ya registrado
-    }
-    this.users.set(email, password);
-    return true;
+  // Registro de usuario con correo y contraseña
+  register(email: string, password: string): Observable<any> {
+    return from(this.afAuth.createUserWithEmailAndPassword(email, password));
   }
 
-  login(email: string, password: string): boolean {
-    if (this.users.get(email) === password) {
-      this.isAuthenticatedStatus = true;
-      return true;
-    }
-    return false;
+  // Inicio de sesión con correo y contraseña
+  login(email: string, password: string): Observable<any> {
+    return from(this.afAuth.signInWithEmailAndPassword(email, password));
   }
 
-  logout(): void {
-    this.isAuthenticatedStatus = false;
+  // Cerrar sesión
+  logout(): Observable<void> {
+    return from(this.afAuth.signOut());
   }
 
-  isAuthenticated(): boolean {
-    return this.isAuthenticatedStatus;
+  // Obtener el estado de autenticación
+  isAuthenticated(): Observable<boolean> {
+    return this.afAuth.authState.pipe(map(user => !!user)); // Verifica si hay un usuario autenticado
   }
 }
