@@ -18,7 +18,7 @@ export class LoginPage {
     this.authService.login(this.email, this.password).subscribe(
       (res) => {
         console.log('Login exitoso:', res);
-        this.navCtrl.navigateForward('/home'); // Navegar a la página principal
+        this.navCtrl.navigateForward('/tabs/home'); // Navegar a la página principal
       },
       (error) => {
         console.error('Error de login:', error);

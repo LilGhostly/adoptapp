@@ -3,54 +3,54 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ocupa toda la altura disponible */
+    height: 100vh; 
     padding: 20px;
-    background-color: #f8f9fa; /* Fondo suave para toda la página */
+    background-color: #f8f9fa; 
     background-image: url('../../assets/images/image-login.png');
-    background-size: cover; /* La imagen se ajusta para cubrir todo el contenedor */
-    background-position: center center; /* La imagen se centra en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
   }
 
   form {
     width: 100%;
-    max-width: 400px; /* Limita el ancho del formulario */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo con opacidad del 80% */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    max-width: 400px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     padding: 20px;
     margin-top: 50px;
   }
 
   ion-item {
-    margin: 10px 0; /* Espaciado entre los elementos */
-    --background: transparent; /* Fondo transparente para ion-item */
+    margin: 10px 0; 
+    --background: transparent; 
   }
 
   ion-label {
-    color: #f5f5f5; /* Texto claro */
-    font-weight: 500; /* Negrita ligera */
+    color: #f5f5f5; 
+    font-weight: 500; 
   }
 
   ion-input {
-    --placeholder-color: rgba(245, 245, 245, 0.6); /* Placeholder más claro */
-    color: #f5f5f5; /* Texto claro */
+    --placeholder-color: rgba(245, 245, 245, 0.6); 
+    color: #f5f5f5;
   }
 
   ion-button {
-    margin-top: 20px; /* Espacio superior */
-    --border-radius: 5px; /* Bordes redondeados */
+    margin-top: 20px; 
+    --border-radius: 5px; 
   }
 
   ion-button[type="submit"] {
-    --background: #229799; /* Botón oscuro */
-    --background-activated: #196c6d; /* Botón más oscuro al presionar */
-    --color: #f5f5f5; /* Texto claro en el botón */
+    --background: #229799; 
+    --background-activated: #196c6d;
+    --color: #f5f5f5; 
   }
 
   ion-button {
-    --background: #229799; /* Botón oscuro */
-    --background-activated: #196c6d; /* Botón más oscuro al presionar */
+    --background: #229799;
+    --background-activated: #196c6d; 
     --color: #f5f5f5; 
 
   }
@@ -59,17 +59,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: none; /* Quita la línea inferior */
-    margin-top: 20px; /* Espaciado adicional */
+    border: none; 
+    margin-top: 20px;
   }
 
   ion-item ion-label {
-    font-size: 0.9rem; /* Reduce un poco el tamaño del texto */
-    color: #f5f5f5; /* Texto claro */
+    font-size: 0.9rem;
+    color: #f5f5f5; 
   }
 
   .login-container form {
-    animation: fadeIn 0.5s ease-in-out; /* Efecto de aparición */
+    animation: fadeIn 0.5s ease-in-out; 
   }
 
   @keyframes fadeIn {
@@ -84,23 +84,23 @@
   }
 
   .contraseña {
-    color: #f5f5f5; /* Color del texto */
-    display: inline-block; /* Asegura que el texto no ocupe todo el ancho */
-    text-decoration: underline; /* Subraya el texto para que se vea como un enlace */
+    color: #f5f5f5; 
+    display: inline-block; 
+    text-decoration: underline; 
     padding-left: 50px;
   }
   
   ion-button[fill="clear"] {
-    --background: transparent; /* Fondo transparente */
+    --background: transparent; 
   }
   
   .logo {
-    position: absolute; /* Para que esté encima del formulario */
-    top: -5%; /* Ajusta la posición para que esté más cerca de la parte superior */
+    position: absolute;
+    top: -5%;
     left: 50%;
-    transform: translateX(-50%); /* Centra el logo horizontalmente */
+    transform: translateX(-50%); 
     max-width: 320px;
-    padding-bottom: 30px; /* Ajusta el espacio debajo del logo */
+    padding-bottom: 30px; 
   }
   
   

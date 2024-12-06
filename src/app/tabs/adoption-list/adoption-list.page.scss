@@ -1,0 +1,11 @@
+.background-image {
+    background-image: url('/assets/images/adopta-pet.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    z-index: -1; /* Asegura que el fondo quede detrás del contenido */
+    position: relative; /* Necesario para que el z-index tenga efecto */
+    background-color: #f0f0f0; /* Color de fondo de respaldo */
+  }
+  

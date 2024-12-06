@@ -1,0 +1,44 @@
+/* Fondo blanco para el header */
+ion-header {
+    background-color: #fff; /* Fondo blanco */
+    ion-toolbar {
+      --background: #fff; /* Fondo blanco para el toolbar */
+    }
+    ion-title {
+      color: #000; /* Título en negro */
+      font-weight: bold; /* Título en negrita */
+    }
+  }
+  
+  
+  /* Estilos para los botones de los tabs */
+  ion-tab-button {
+    --color: #000; /* Color negro para el texto */
+    --background: #fff; /* Fondo blanco */
+    --border-radius: 25px; /* Esquinas redondeadas para los botones de los tabs */
+    
+    /* Estilos para los íconos */
+    ion-icon {
+      font-size: 20px; /* Tamaño del ícono */
+      color: #000; /* Íconos de color negro */
+    }
+  
+    /* Cuando el tab no está seleccionado, cambia de color */
+    &:hover, &:active {
+      background-color: #f1f1f1; /* Fondo gris claro cuando se presiona o pasa el cursor */
+    }
+  
+    /* Cuando el tab está seleccionado, mantiene el color blanco */
+    &.tab-selected {
+      background-color: #fff;
+    }
+  }
+  
+  /* Cuando un tab está seleccionado, cambia el ícono a color gris */
+  ion-tab-button[tab="home"].tab-selected ion-icon,
+  ion-tab-button[tab="adoption-list"].tab-selected ion-icon,
+  ion-tab-button[tab="profile"].tab-selected ion-icon,
+  ion-tab-button[tab="animal-post"].tab-selected ion-icon {
+    color: #888; /* Gris para el ícono cuando está seleccionado */
+  }
+  

@@ -4,6 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FirestoreModule } from '@angular/fire/firestore'; // Para Firestore
 
 // Importación de Firebase y los módulos necesarios
 import { AngularFireModule } from '@angular/fire/compat';
@@ -17,7 +18,9 @@ import { environment } from '../environments/environment';  // Asegúrate de ten
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule   // Inicializa Firebase
+    AngularFireAuthModule,
+    FirestoreModule, // Importar el módulo de Firestore
+
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

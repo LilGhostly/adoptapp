@@ -1,0 +1,108 @@
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Asegura que el fondo ocupe toda la altura */
+  background-image: url('/assets/images/adopta-pet.webp');
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+ion-content {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido hacia arriba */
+  min-height: 100%; /* Asegura que el contenido ocupe toda la altura */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Asegura que no haya márgenes */
+}
+
+.form-card {
+  background-color: rgba(222, 222, 222, 0.8); /* Fondo semi-transparente */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1;
+  max-width: 100%; /* Para evitar que el formulario se haga más grande que el contenedor */
+  max-height: 75%;
+  overflow: auto; /* Para que si el formulario es largo, puedas desplazarlo */
+}
+
+.input-item {
+  --background: transparent; /* Fondo gris claro para los campos */
+  margin-bottom: 15px; /* Espaciado entre los campos */
+  color: #000000;
+}
+
+ion-label {
+  color: #000000; /* Texto de los labels en color negro */
+}
+
+ion-input {
+  color: #000000; /* Texto en negro para los inputs */
+}
+
+.custom-button {
+  margin-top: 20px; /* Espaciado superior */
+  --border-radius: 10px; /* Esquinas redondeadas */
+  --background: #48CFCB; /* Fondo predeterminado */
+  --color: #ffffff; /* Texto blanco */
+  --box-shadow: none; /* Eliminar cualquier sombra predeterminada */
+  --transition: background-color 0.3s ease; /* Suavizar la transición de color */
+}
+
+.custom-button:active {
+  --background: #229799; /* Fondo cuando se presiona el botón */
+}
+
+ion-item {
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding: 12px 0;
+  display: flex; /* Usamos flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+ion-button {
+  --border-radius: 10px; /* Redondear los bordes */
+  --background: #48CFCB; /* Fondo similar al de otros botones */
+  --color: #fff; /* Color blanco para el texto */
+  width: auto; /* Ajustamos el ancho del botón a su contenido */
+  max-width: 100%; /* No dejamos que el botón se desborde */
+  padding: 12px 20px; /* Añadimos un poco de relleno al botón */
+}
+
+ion-img {
+  max-width: 100%; /* Hacer que la imagen ocupe todo el contenedor */
+  max-height: 100%; /* Asegura que la imagen no se desborde */
+  object-fit: cover; /* Ajusta la imagen para que se recorte correctamente */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra suave */
+}
+
+.message-item {
+  margin-bottom: 20px; /* Espacio entre el mensaje y el formulario */
+  text-align: center; /* Centra el texto */
+  background-color: white;
+  --background: transparent;
+}
+
+.message-item ion-label {
+  text-align: center; /* Asegura que el texto esté centrado dentro del label */
+}
+
+.message-item h2 {
+  font-size: 24px; /* Tamaño de título */
+  font-weight: bold; /* Hace que el título sea más visible */
+  color: #48CFCB; /* Color verde para el título */
+  margin-bottom: 10px; /* Separación entre el título y el párrafo */
+}
+
+.message-item p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  color: #000000; /* Color gris oscuro para el texto */
+  margin: 0;
+}

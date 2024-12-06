@@ -1,0 +1,79 @@
+<ion-content>
+  <div class="background-container">
+    <ion-item class="message-item">
+      <ion-label>
+        <h2>¡Gracias por ayudar!</h2>
+        <p>Al compartir la información de este animal, nos ayudas a darle una nueva oportunidad. Rellena los detalles y publica la foto para que más personas puedan ayudar a encontrarle un hogar lleno de amor.</p>
+      </ion-label>
+    </ion-item>
+    <ion-card class="form-card">
+      <form (ngSubmit)="submitPost()">
+        <!-- Tipo de Animal --> 
+        <ion-item class="input-item">
+          <ion-label position="floating">Tipo de Animal</ion-label>
+          <ion-select [(ngModel)]="animal.type" name="type" required>
+            <ion-select-option value="Gato">Gato</ion-select-option>
+            <ion-select-option value="Perro">Perro</ion-select-option>
+            <ion-select-option value="Otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Edad Aproximada -->
+        <ion-item class="input-item">
+          <ion-label position="floating">Edad Aproximada</ion-label>
+          <ion-select [(ngModel)]="animal.age" name="age" required>
+            <ion-select-option *ngFor="let option of ageOptions" [value]="option">{{ option }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Tamaño en Centímetros -->
+        <ion-item class="input-item">
+          <ion-label position="floating">Tamaño en Centímetros</ion-label>
+          <ion-select [(ngModel)]="animal.size" name="size" required>
+            <ion-select-option *ngFor="let size of sizeOptions" [value]="size">{{ size }} cm</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Estado de Vacunación -->
+        <ion-item class="input-item">
+          <ion-label position="floating">Estado de Vacunación</ion-label>
+          <ion-select [(ngModel)]="animal.vaccinationStatus" name="vaccinationStatus" required>
+            <ion-select-option value="Vacunado">Vacunado</ion-select-option>
+            <ion-select-option value="No Vacunado">No Vacunado</ion-select-option>
+            <ion-select-option value="No lo sé">No lo sé</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Estado de Salud -->
+        <ion-item class="input-item">
+          <ion-label position="floating">Estado de Salud</ion-label>
+          <ion-select [(ngModel)]="animal.healthStatus" name="healthStatus" required>
+            <ion-select-option value="Bueno">Bueno</ion-select-option>
+            <ion-select-option value="Regular">Regular</ion-select-option>
+            <ion-select-option value="Malo">Malo</ion-select-option>
+            <ion-select-option value="Desconocido">Desconocido</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Descripción -->
+        <ion-item class="input-item">
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea [(ngModel)]="animal.description" name="description" required></ion-textarea>
+        </ion-item>
+
+        <!-- Foto -->
+        <ion-item class="input-item">
+          <ion-button expand="full" (click)="takePhoto()">Tomar Foto</ion-button>
+        </ion-item>
+
+        <!-- Mostrar Foto -->
+        <ion-item *ngIf="animal.photo" class="input-item">
+          <ion-label>Foto tomada</ion-label>
+          <ion-img [src]="animal.photo" alt="Foto del Animal" style="max-width: 100px; max-height: 100px;"></ion-img>
+        </ion-item>
+
+        <ion-button class="custom-button" expand="full" type="submit">Publicar</ion-button>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-content class="background-image">
+  <!-- Perros -->
+  <h2>Perros</h2>
+  <div class="horizontal-scroll">
+    <ion-card *ngFor="let dog of dogs">
+      <ion-card-header>
+        <ion-card-title>{{ dog.name || 'Sin Nombre' }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Edad:</strong> {{ dog.age }}</p>
+        <p><strong>Tamaño:</strong> {{ dog.size }} cm</p>
+        <p><strong>Vacunación:</strong> {{ dog.vaccinationStatus }}</p>
+        <p><strong>Salud:</strong> {{ dog.healthStatus }}</p>
+        <ion-img *ngIf="dog.photo" [src]="dog.photo" alt="Foto del Animal"></ion-img>
+      </ion-card-content>
+      <ion-button expand="block" fill="outline">Detalles</ion-button>
+    </ion-card>
+  </div>
+
+  <!-- Gatos -->
+  <h2>Gatos</h2>
+  <div class="horizontal-scroll">
+    <ion-card *ngFor="let cat of cats">
+      <ion-card-header>
+        <ion-card-title>{{ cat.name || 'Sin Nombre' }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Edad:</strong> {{ cat.age }}</p>
+        <p><strong>Tamaño:</strong> {{ cat.size }} cm</p>
+        <p><strong>Vacunación:</strong> {{ cat.vaccinationStatus }}</p>
+        <p><strong>Salud:</strong> {{ cat.healthStatus }}</p>
+        <ion-img *ngIf="cat.photo" [src]="cat.photo" alt="Foto del Animal"></ion-img>
+      </ion-card-content>
+      <ion-button expand="block" fill="outline">Detalles</ion-button>
+    </ion-card>
+  </div>
+
+  <!-- Otros -->
+  <h2>Otros</h2>
+  <div class="horizontal-scroll">
+    <ion-card *ngFor="let other of others">
+      <ion-card-header>
+        <ion-card-title>{{ other.name || 'Sin Nombre' }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Edad:</strong> {{ other.age }}</p>
+        <p><strong>Tamaño:</strong> {{ other.size }} cm</p>
+        <p><strong>Vacunación:</strong> {{ other.vaccinationStatus }}</p>
+        <p><strong>Salud:</strong> {{ other.healthStatus }}</p>
+        <ion-img *ngIf="other.photo" [src]="other.photo" alt="Foto del Animal"></ion-img>
+      </ion-card-content>
+      <ion-button expand="block" fill="outline">Detalles</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
